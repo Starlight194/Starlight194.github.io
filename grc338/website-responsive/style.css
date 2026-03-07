@@ -1,0 +1,194 @@
+/*CSS DOCUMENT*/
+
+html, body, div, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit;} /*My edited version of the Eric Meyer’s reset tool. You may want to include this in all of your future CSS files. */
+
+
+div.home-container { 
+	background: url(home-background.jpg) center center fixed;
+	background-size: cover;
+	position: relative;
+	min-height: 100vh;
+}
+
+div.container { 
+	position: relative;
+	min-height: 100vh;
+}
+
+/* >>> IMPORTANT: you have to change the wrap of the content of your home page (index) in a div with a class home-container to make it work. If you used a div with the class container on your home, you’ll only need to change the name of the class. And you need a div with the class container and all the other pages.  */
+
+
+main { 
+	padding: 4em 1.5em 6em;
+	}
+
+body {
+font-family: sans-serif;
+}
+
+nav ul li.selected a {
+	background: rgb(4, 4, 191)
+}
+
+img {
+    width: 100%; /*Please leave this line.*/
+     display: block;
+}
+
+article {
+	background: rgb(51, 177, 219);
+	padding: 2em;
+	margin-top: 2em;
+}
+
+P{
+	margin: 0 0 1em;
+}
+
+body{
+	background: rgb(193, 13, 13);
+}
+.container{
+	background:rgb(243, 234, 234);
+	margin: auto;
+}
+
+
+header {
+	display: grid;
+	grid-template-columns: 1fr auto;
+	background: #939395;
+	padding: 1.4em 1.5em;
+	}
+
+h1 {
+	width: 35%;
+	}
+
+h2, h3, h4 {
+		font-weight: 600;
+	}
+
+h2 {
+	font-size: 2.6em;
+	margin: 0 0 1.2em;
+	}
+	
+h3 {
+	font-size: 1.7em;
+	margin: 1.9em 0 0.9em;
+}
+
+
+a {
+	text-decoration: none;/*I was playing around with this one but I did't have to enter anything I don't see any use for this text.*/
+	}
+
+nav ul  {
+	text-align: right;
+	}
+	
+ul li 	{
+	list-style-type: none;/*this "none" took out the bullets points...was their no other way to clear them in html only in css.*/
+}
+
+figure {
+	margin-bottom: 1.9em;
+}
+
+main.menu ul {
+		margin: 1.9em 0.01;
+}	
+
+main.menu ul li {
+		margin: 0 0 2em;
+		display: grid;
+		grid-template-columns: 1fr auto; /*I looked up more example in html for beginners because I was not sure if putting auto would work and tested out.*/
+		grid-template-rows: auto auto;
+		gap: 0.2em 1em;
+}	
+
+p {
+	margin: 0 0 0.9em;
+	}
+
+main.menu ul li h4 {
+	grid-column: 1;
+	margin: 0;
+}
+	
+p.description {
+	grid-column: 1 / -1;
+	margin: 0;
+	}
+	
+p.price {
+	grid-row: 1;
+	grid-column: 2;
+	color: rgb(186, 19, 19);
+	text-align: right;
+	margin: 0;
+	}
+	
+nav ul li {
+	text-transform: uppercase;
+	font-weight: 650;
+	margin-bottom: 0.4em;
+	}
+	
+nav ul li a {
+	color: rgb(233, 233, 60);
+	background-color: rgb(213, 128, 10);
+	padding: 0.2em 0.5em 0.2em;
+	}
+	
+
+p.slogan {
+	font-size: 4em;
+	font-family: serif;/*This is from the body of slogan.*/
+	font-style: italic;
+	margin: 0 0 6em;
+	color: rgb(237, 232, 232);	
+	}
+	
+footer {
+  position: absolute;/*This was already there and I don't recall if you learn throughly in class.*/
+  bottom: 0;
+  width: 100%;
+  height: 3rem; 
+  box-sizing: border-box;
+  padding: 0.7em 1.4em;
+  background: rgb(174, 174, 18);
+}
+
+address {
+	color: rgb(233, 165, 40);
+	}
+
+footer p {
+	margin: 0;
+}
+
+@media screen and (min-width: 60em) {
+	.container{
+		max-width: 60em;
+		margin:0 auto;
+	}
+	header{
+		grid-template-columns: auto 1fr;
+		align-items: center;
+	}
+	nav ul li{
+		display: inline;
+		margin-left: 1em;
+	}
+	article {
+		max-width: 41em;
+		margin: 3em auto;
+	}
+	main.menu ul {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 2em 3 em;
+	}
+    }
