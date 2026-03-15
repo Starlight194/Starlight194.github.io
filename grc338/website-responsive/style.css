@@ -1,8 +1,8 @@
 /*CSS DOCUMENT*/
-
+/* reset (professor provided) */
 html, body, div, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit;} /*My edited version of the Eric Meyer’s reset tool. You may want to include this in all of your future CSS files. */
 
-
+/* This is the home bakground image (home page only) */
 div.home-container { 
 	background: url(home-background.jpg) center center fixed;
 	background-size: cover;
@@ -10,61 +10,51 @@ div.home-container {
 	min-height: 100vh;
 }
 
+/* This is for the other pages  (about, menu, contact page only) */
 div.container { 
 	position: relative;
 	min-height: 100vh;
+	background: rgb(244, 241, 241);
 }
 
 /* >>> IMPORTANT: you have to change the wrap of the content of your home page (index) in a div with a class home-container to make it work. If you used a div with the class container on your home, you’ll only need to change the name of the class. And you need a div with the class container and all the other pages.  */
 
-
-main { 
-	padding: 4em 1.5em 6em;
-	}
-
+/* This is the page base and it's requred by asignment*/
 body {
 font-family: sans-serif;
+background: rgb(194, 14, 16); /*This section is where the red peeking behnd the page.*/
 }
 
-nav ul li.selected a {
-	background: rgb(4, 4, 191)
-}
+/* This is for the spacng for content betwen header and footer */
+main { 
+	padding: 1em 3em 4em;
+	}
 
+	
+main.menu {
+padding: 1em 0.7em 4em;
+}
+/* images: from the bruno requres this exact rule */
 img {
     width: 100%; /*Please leave this line.*/
      display: block;
 }
 
-article {
-	background: rgb(51, 177, 219);
-	padding: 2em;
-	margin-top: 2em;
-}
-
-P{
-	margin: 0 0 1em;
-}
-
-body{
-	background: rgb(193, 13, 13);
-}
-.container{
-	background:rgb(243, 234, 234);
-	margin: auto;
-}
-
-
+/* header layout - mobile first uses a siple grid */
 header {
 	display: grid;
-	grid-template-columns: 1fr auto;
-	background: #939395;
-	padding: 1.4em 1.5em;
+	grid-template-columns: auto 1fr; /* This section the logo column is auto, This section the nav column fills */
+	background: rgb(200, 199, 205);
+	padding: 1.5em 1em;
+	align-items: start;
 	}
 
+/* This section is for the logo sizng */	
 h1 {
-	width: 35%;
-	}
+	width: 13em;
+	}	
 
+/* This section is for the heading weghts/sizes */	
 h2, h3, h4 {
 		font-weight: 600;
 	}
@@ -77,88 +67,109 @@ h2 {
 h3 {
 	font-size: 1.7em;
 	margin: 1.9em 0 0.9em;
-}
-
-
-a {
-	text-decoration: none;/*I was playing around with this one but I did't have to enter anything I don't see any use for this text.*/
-	}
-
-nav ul  {
-	text-align: right;
-	}
-	
-ul li 	{
-	list-style-type: none;/*this "none" took out the bullets points...was their no other way to clear them in html only in css.*/
-}
-
-figure {
-	margin-bottom: 1.9em;
-}
-
-main.menu ul {
-		margin: 1.9em 0.01;
 }	
 
+/* This is for the links tabs you put "none", becuse it undrline the text by defult */
+a {
+	text-decoration: none;
+	}
+
+/* This sectons is for the nav plcement and style */
+nav ul  {
+	text-align: right;
+	margin-top: 0.4em; /* This section changes the buton area to the center of the header (other word add space above the buttons) */
+	}	
+
+/*This "none" took out the bulets points...was their no other way to clear them in html only in css.*/
+ul li 	{
+	list-style-type: none;
+}
+
+/* This section is about the content figure spcing */
+figure {
+	margin-bottom: 0 0.1em 6em;
+}
+
+nav ul li {
+	text-transform: uppercase; /* This section is use CSS upercase, not in HTML text */
+	font-weight: 650;
+	margin-bottom: 1.2em;
+	}
+
+/* This section of nav butons is the apearance (small stacked butons on moble) */
+nav ul li a {
+	color: rgb(233, 235, 63);
+	background-color: rgb(2, 33, 171);
+	padding: 0.5em 0.6em;
+	display: inline-block; /* This section is put spaces in between the buttons */
+	font-size: 1.30em;
+	}
+
+/* Keep nav together notd - this selected state (use only on th correct page) */
+nav ul li.selected a {
+	background: rgb(228, 136, 9);
+	color:  rgb(245, 240, 240)
+}
+
+
+/* This section is for the  menu page list spacing and controls above and below the menu list in all screen sizes*/
+main.menu ul {
+	margin: 1.9em 0;
+}
+
+/* This section is for the  menu layout control that is inside of each product block of sections */
 main.menu ul li {
 		margin: 0 0 2em;
 		display: grid;
-		grid-template-columns: 1fr auto; /*I looked up more example in html for beginners because I was not sure if putting auto would work and tested out.*/
+		grid-template-columns: auto auto; 
 		grid-template-rows: auto auto;
-		gap: 0.2em 1em;
 }	
 
-p {
-	margin: 0 0 0.9em;
-	}
-
-main.menu ul li h4 {
-	grid-column: 1;
-	margin: 0;
+/* This section makes whole pargraph in the  text box blue nd the size of the pargprah on the desktop */
+article {
+	background: rgb(105, 208, 249);
+	padding: 1em;
+	margin-top: 6em;
 }
-	
-p.description {
-	grid-column: 1 / -1;
-	margin: 0;
-	}
-	
+
+/* This section is for the paragraph defat spacing that is inside the box shaded area */
+p{
+	margin: 0 0 0.9em;
+}
+
+/* This section is for the prce position in menu items */
 p.price {
 	grid-row: 1;
 	grid-column: 2;
 	color: rgb(186, 19, 19);
 	text-align: right;
-	margin: 0;
+	margin: 0.2em;
 	}
-	
-nav ul li {
-	text-transform: uppercase;
-	font-weight: 650;
-	margin-bottom: 0.4em;
-	}
-	
-nav ul li a {
-	color: rgb(233, 233, 60);
-	background-color: rgb(213, 128, 10);
-	padding: 0.2em 0.5em 0.2em;
-	}
-	
 
+/* This section is for the menu item description spans full width */
+p.description {
+	grid-column: 1 / -1;
+	margin: 0em;
+	}
+
+/* This section the slogan stylig (important: serif + italic the rules) */	
 p.slogan {
-	font-size: 4em;
+	font-size: 4.3em;
 	font-family: serif;/*This is from the body of slogan.*/
-	font-style: italic;
-	margin: 0 0 6em;
+	font-style: italic;/*This is from the body of slogan.*/
+	margin: 1em 0 2em;
 	color: rgb(237, 232, 232);	
 	}
-	
+
+/* This section is for the footer pined into the bottom of the container */	
 footer {
-  position: absolute;/*This was already there and I don't recall if you learn throughly in class.*/
+  position: absolute;
   bottom: 0;
   width: 100%;
   height: 3rem; 
   box-sizing: border-box;
-  padding: 0.7em 1.4em;
-  background: rgb(174, 174, 18);
+  padding: 1.1em 0.3em 1.4em;
+  background: rgb(239, 230, 43);
 }
 
 address {
@@ -169,26 +180,45 @@ footer p {
 	margin: 0;
 }
 
+
+/* Need to space these out because i'll get confused */
+
+
+
+/* This section is for the Desktop and it largn. the screens */
 @media screen and (min-width: 60em) {
-	.container{
-		max-width: 60em;
-		margin:0 auto;
+	div.home-container, /* This sectioin is the page tha turn red background like peeking on the side of the pages  */
+	div.container {
+		max-width: 77em;
+		margin: 0 auto;
 	}
-	header{
-		grid-template-columns: auto 1fr;
+
+/* This section is aligning the logo an also naviation to vertcally */
+	header {
 		align-items: center;
 	}
-	nav ul li{
-		display: inline;
-		margin-left: 1em;
-	}
+
+/* This section makes whole paragraph a narrow looked in the centred blue text box on the desktop */
 	article {
-		max-width: 41em;
-		margin: 3em auto;
+		max-width: 36em;
+		margin: 1.3em auto 3em;
 	}
+
+/* This section is to make the naviation to horizntal area instead of stacked the tabs buttons */
+	nav ul li {
+		display: inline-block;
+		margin-left: 0.6em;
+	}
+
+	figure {
+		max-width: 69em;
+		margin: 0 auto 1em;
+	}
+
+/* This section makes the product split in two colmns on the grid you will se in on the desktop.  */
 	main.menu ul {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
-		gap: 2em 3 em;
+		gap: 2em 3em;
 	}
-    }
+}
